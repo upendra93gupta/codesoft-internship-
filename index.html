@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input[type="button"] {
+        width: 100%;
+        height: 100%;
+        font-size: 40px;
+        border-radius: 30px;
+        color: rgb(152, 62, 62);
+      }
+      .w {
+        background-color: rgb(137, 175, 175);
+        height: 70vh;
+        margin-left: 30%;
+        width: 50%;
+        position: relative;
+        border-radius: 70px;
+      }
+      #a {
+        height: 70px;
+        font-size: 50px;
+        color: rgb(80, 73, 187);
+      }
+      #c {
+        margin-left: 20%;
+        margin-top: 50px;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w">
+      <div id="c">
+        <h3 style="font-size: 20px">Calculator</h3>
+        <table style="width: 100px" height="100px">
+          <tr>
+            <th colspan="3">
+              <input type="text" id="a" style="width: 400px" />
+            </th>
+            <th><input type="button" value="c" onclick="clr()" /></th>
+          </tr>
+          <tr>
+            <th><input type="button" value="1" onclick="pick(1)" /></th>
+            <th><input type="button" value="2" onclick="pick(2)" /></th>
+            <th><input type="button" value="3" onclick="pick(3)" /></th>
+            <th><input type="button" value="/" onclick="pick('/')" /></th>
+          </tr>
+
+          <tr>
+            <th><input type="button" value="4" onclick="pick(4)" /></th>
+            <th><input type="button" value="5" onclick="pick(5)" /></th>
+            <th><input type="button" value="6" onclick="pick(6)" /></th>
+            <th><input type="button" value="*" onclick="pick('*')" /></th>
+          </tr>
+
+          <tr>
+            <th><input type="button" value="7" onclick="pick(7)" /></th>
+            <th><input type="button" value="8" onclick="pick(8)" /></th>
+            <th><input type="button" value="9" onclick="pick(9)" /></th>
+            <th><input type="button" value="-" onclick="pick('-')" /></th>
+          </tr>
+
+          <tr>
+            <th><input type="button" value="." onclick="pick('.')" /></th>
+            <th><input type="button" value="0" onclick="pick(0)" /></th>
+            <th><input type="button" value="=" onclick="solve()" /></th>
+            <th><input type="button" value="+" onclick="pick('+')" /></th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      function pick(val) {
+        document.getElementById("a").value += val;
+      }
+      function clr() {
+        document.getElementById("a").value = "";
+      }
+
+      function solve() {
+        var x = document.getElementById("a").value;
+        var y = eval(x);
+        document.getElementById("a").value = y;
+      }
+    </script>
+  </body>
+</html>
